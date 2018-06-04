@@ -24,20 +24,9 @@ public interface IService<T> {
 
     PageInfo<T> getPageInfo(Map<String,Object> params);
 
+    int deleteByKey(Object key);
 
 
-    /**
-     *  int deleteByPrimaryKey(Long id);
-     *
-     *     int insert(User record);
-     *
-     *     int insertSelective(User record);
-     *
-     *     User selectByPrimaryKey(Long id);
-     *
-     *     int updateByPrimaryKeySelective(User record);
-     *
-     *     int updateByPrimaryKey(User record);
-     */
+
 
 }
