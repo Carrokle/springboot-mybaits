@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
         PageInfo<User> pageInfo = PageHelper.startPage(pageIndex,rows).doSelectPageInfo(() -> userMapper.getUserList());
         logger.info("分页查询pageInfo：" + pageInfo);
         long total = PageHelper.count(() -> userMapper.getUserList());
-        logger.info("分页查询total：" + total);
+        logger.info("分页查询total1：" + total);
         PageHelper.startPage(pageIndex,rows);
         return userMapper.getUserList();
     }
