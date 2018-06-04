@@ -2,6 +2,7 @@ package com.service.impl;
 
 import com.dao.UserMapper;
 import com.domain.User;
+import com.github.pagehelper.ISelect;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -57,7 +58,15 @@ public class UserServiceImpl implements UserService {
         Integer rows = Integer.parseInt(params.get("rows").toString());
         Page<User> page = PageHelper.startPage(pageIndex,rows).doSelectPage(() -> userMapper.getUserList());
         logger.info("分页查询page：" + page);
+        // lambda
         PageInfo<User> pageInfo = PageHelper.startPage(pageIndex,rows).doSelectPageInfo(() -> userMapper.getUserList());
+        // 不适用lambda
+        pageInfo = PageHelper.startPage(pageIndex,rows).doSelectPageInfo(new ISelect() {
+            @Override
+            public void doSelect() {
+                userMapper.getUserList();
+            }
+        });
         logger.info("分页查询pageInfo：" + pageInfo);
         long total = PageHelper.count(() -> userMapper.getUserList());
         logger.info("分页查询total：" + total);
