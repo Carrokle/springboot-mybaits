@@ -1,10 +1,8 @@
 package com.common;
 
-import com.github.pagehelper.PageInfo;
-
 import org.springframework.stereotype.Service;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * 通用接口
@@ -22,9 +20,9 @@ public interface IService<T> {
 
     int updateByPrimaryKeySelective(T entity);
 
-    PageInfo<T> getPageInfo(Map<String,Object> params);
-
     int deleteByKey(Object key);
+
+    List<T> selectByExample(Object example);
 
 
 

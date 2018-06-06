@@ -1,9 +1,5 @@
 package com.common;
 
-import com.github.pagehelper.PageInfo;
-
-import java.util.Map;
-
 import tk.mybatis.mapper.common.Mapper;
 
 public abstract class BaseService<T> implements IService<T>{
@@ -29,21 +25,17 @@ public abstract class BaseService<T> implements IService<T>{
 
     @Override
     public int updateByPrimaryKey(T entity) {
-        return 0;
+        return mapper.updateByPrimaryKey(entity);
     }
 
     @Override
     public int updateByPrimaryKeySelective(T entity) {
-        return 0;
+        return mapper.updateByPrimaryKeySelective(entity);
     }
 
-    @Override
-    public PageInfo<T> getPageInfo(Map<String, Object> params) {
-        return null;
-    }
 
     @Override
     public int deleteByKey(Object key) {
-        return 0;
+        return mapper.deleteByPrimaryKey(key);
     }
 }

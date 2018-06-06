@@ -50,7 +50,22 @@
 
         <!-- 要生成哪些表 -->
 
-        <table tableName="sys_role" domainObjectName="Role"
+        <table tableName="resources" domainObjectName="Resources"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+        <table tableName="role" domainObjectName="Role"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+        <table tableName="role_resources" domainObjectName="RoleResources"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+        <table tableName="user_role" domainObjectName="UserRole"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
